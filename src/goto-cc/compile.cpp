@@ -421,9 +421,10 @@ bool compilet::compile()
       std::string cfn;
 
       if(output_file_object=="")
-        cfn=get_base_name(file_name, true)+"."+object_file_extension;
+        cfn = output_directory_object + get_base_name(file_name, true) + "." +
+              object_file_extension;
       else
-        cfn=output_file_object;
+        cfn = output_file_object;
 
       if(write_object_file(cfn, symbol_table, compiled_functions))
         return true;
